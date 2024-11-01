@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empowering The Nation University</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @font-face {
+    font-family: 'Garet-Book';
+    src: url('fonts/Garet-Book.woff') format('woff2'), /* Adjust the format as necessary */
+         url('fonts/Garet-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+        body, html {
+            font-family: Garet-Book, sans-serif;
+            font-stretch: expanded;
+           font-weight: bold;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .announcement-bar {
+            background-color: #28a99e;
+            color: #000000;
+            text-align: center;
+            padding: 20px 0;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+            z-index: 1000; /* Ensure it appears on top */
+        }
+        .announcement-text {
+            display: inline-block;
+            padding-left: 100%;
+            animation: slide-left 30s linear infinite;
+        }
+        @keyframes slide-left {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+        header {
+            background-color: #ffffff;
+            border-bottom: 2px solid #28a99e;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Ensure space between logo and nav items */
+            padding: 10px 20px;
+            position: relative;
+            z-index: 900; /* Keep it above other content but below announcement bar */
+        }
+        header img {
+            height: 100px; /* Adjust the height according to your logo */
+            max-width: 100%; /* Ensure the logo scales well */
+            margin-right: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end; /* Align navigation to the right */
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: bold;
+            padding: 10px 0;
+            display: block;
+        }
+        /* Search and Cart Container */
+        .search-cart-container {
+            display: flex;
+            align-items: center;
+        }
+        /* Search Bar Styles */
+        .search-container {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        .search-container input {
+            padding: 5px 10px;
+            font-size: 16px;
+            border: 2px solid #28a99e;
+            border-radius: 5px;
+            outline: none;
+        }
+        .search-container button {
+            padding: 5px 10px;
+            background-color: #28a99e;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 5px;
+        }
+        .search-container button i {
+            color: #ffffff;
+            font-size: 16px;
+        }
+        /* Cart Icon Styles */
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .cart-icon i {
+            font-size: 28px; /* Larger cart icon */
+            color: #000000;
+        }
+        .cart-count {
+            position: absolute;
+            top: -8px; /* Position above the cart icon */
+            right: -8px; /* Align it to the right */
+            background-color: #28a99e;
+            color: #ffffff;
+            font-size: 12px;
+            border-radius: 50%;
+            padding: 2px 6px;
+            text-align: center;
+            line-height: 1;
+        }
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+        h2 {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .content {
+            flex: 1;
+        }
+        footer {
+            background-color: #81cdc6;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            position: relative;
+        }
+        p {
+            padding: 0 20px;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+        }
+        .social-icons {
+            margin: 10px 0;
+        }
+        .social-icons a {
+            color: #000000;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 24px;
+        }
+        .social-icons a:hover {
+            color: #28a99e;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            width: 100%; /* Make images full width */
+            height: auto; /* Maintain aspect ratio */
+            margin: 10px 0;
+            border: none; /* Remove the border around images */
+            border-radius: 0; /* Remove rounded corners */
+        }
+    </style>
+</head>
+<body>
+    <div class="announcement-bar">
+        <div class="announcement-text">Courses on sale from R199.99 | Plus an extra 15% with Promo Code "EMPOWERMENT"</div>
+    </div>
+    
+    <header>
+        <img src="Assets/ETNU.png" alt="Empowering the Nation University Logo">
+        
+        <nav>
+            <ul>
+                <li><a href="About_Us.html">ABOUT US</a></li>
+                <li><a href="Contact_Us.html">CONTACT US</a></li>
+                <li><a href="Our_Courses.html">OUR COURSES</a></li>
+            </ul>
+        </nav>
+
+        <div class="search-cart-container">
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" placeholder="Search Our Courses...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            
+            <!-- Add to Cart Icon -->
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <div class="cart-count">0</div>
+            </div>
+        </div>
+    </header> 
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2024 Empowering The Nation University. All rights reserved.</p>
+    </footer>
+</body>
+</html>

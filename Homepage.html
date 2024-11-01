@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empowering The Nation University</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @font-face {
+    font-family: 'Garet-Book';
+    src: url('fonts/Garet-Book.woff') format('woff2'), /* Adjust the format as necessary */
+         url('fonts/Garet-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+        body, html {
+            font-family: Garet-Book, sans-serif;
+            font-stretch: expanded;
+           font-weight: bold;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .announcement-bar {
+            background-color: #28a99e;
+            color: #000000;
+            text-align: center;
+            padding: 20px 0;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+            z-index: 1000; /* Ensure it appears on top */
+        }
+        .announcement-text {
+            display: inline-block;
+            padding-left: 100%;
+            animation: slide-left 30s linear infinite;
+        }
+        @keyframes slide-left {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+        header {
+            background-color: #ffffff;
+            border-bottom: 2px solid #28a99e;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Ensure space between logo and nav items */
+            padding: 10px 20px;
+            position: relative;
+            z-index: 900; /* Keep it above other content but below announcement bar */
+        }
+        header img {
+            height: 100px; /* Adjust the height according to your logo */
+            max-width: 100%; /* Ensure the logo scales well */
+            margin-right: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end; /* Align navigation to the right */
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: bold;
+            padding: 10px 0;
+            display: block;
+        }
+        /* Search and Cart Container */
+        .search-cart-container {
+            display: flex;
+            align-items: center;
+        }
+        /* Search Bar Styles */
+        .search-container {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        .search-container input {
+            padding: 5px 10px;
+            font-size: 16px;
+            border: 2px solid #28a99e;
+            border-radius: 5px;
+            outline: none;
+        }
+        .search-container button {
+            padding: 5px 10px;
+            background-color: #28a99e;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 5px;
+        }
+        .search-container button i {
+            color: #ffffff;
+            font-size: 16px;
+        }
+        /* Cart Icon Styles */
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .cart-icon i {
+            font-size: 28px; /* Larger cart icon */
+            color: #000000;
+        }
+        .cart-count {
+            position: absolute;
+            top: -8px; /* Position above the cart icon */
+            right: -8px; /* Align it to the right */
+            background-color: #28a99e;
+            color: #ffffff;
+            font-size: 12px;
+            border-radius: 50%;
+            padding: 2px 6px;
+            text-align: center;
+            line-height: 1;
+        }
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+        h2 {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .content {
+            flex: 1;
+        }
+        footer {
+            background-color: #81cdc6;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            position: relative;
+        }
+        p {
+            padding: 0 20px;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+        }
+        .social-icons {
+            margin: 10px 0;
+        }
+        .social-icons a {
+            color: #000000;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 24px;
+        }
+        .social-icons a:hover {
+            color: #28a99e;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            width: 100%; /* Make images full width */
+            height: auto; /* Maintain aspect ratio */
+            margin: 10px 0;
+            border: none; /* Remove the border around images */
+            border-radius: 0; /* Remove rounded corners */
+        }
+    </style>
+</head>
+<body>
+    <div class="announcement-bar">
+        <div class="announcement-text">Courses on sale from R199.99 | Plus an extra 15% with Promo Code "EMPOWERMENT"</div>
+    </div>
+    
+    <header>
+        <img src="Assets/ETNU.png" alt="Empowering the Nation University Logo">
+        
+        <nav>
+            <ul>
+                <li><a href="About_Us.html">ABOUT US</a></li>
+                <li><a href="Contact_Us.html">CONTACT US</a></li>
+                <li><a href="Our_Courses.html">OUR COURSES</a></li>
+            </ul>
+        </nav>
+
+        <div class="search-cart-container">
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" placeholder="Search Our Courses...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            
+            <!-- Add to Cart Icon -->
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <div class="cart-count">0</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="content">
+        <!-- Image Section -->
+        <div class="image-container">
+            <img src="Assets/Website Assets.png" alt="Main Homepage Hero Image">
+            <img src="Assets/Slogan Image.png" alt="ETNU Slogan">
+        </div>
+
+        
+     
+       <!-- Client Testimonials Section -->
+<h2 style="text-align: center; margin: 40px 0; color: #000;">Client Testimonials</h2>
+<div class="testimonials-slider">
+    <!-- Testimonial 1 -->
+    <div class="testimonial-box">
+        <div class="testimonial-image">
+            <img src="https://via.placeholder.com/100" alt="Client 1" class="client-image">
+        </div>
+        <div class="testimonial-content">
+            <p>"The courses at Empowering The Nation University have transformed my life! The Child Minding course helped me secure a better-paying job. Highly recommend!"</p>
+            <h4>Jane Doe</h4>
+        </div>
+    </div>
+
+    <!-- Testimonial 2 -->
+    <div class="testimonial-box">
+        <div class="testimonial-image">
+            <img src="https://via.placeholder.com/100" alt="Client 2" class="client-image">
+        </div>
+        <div class="testimonial-content">
+            <p>"I loved the Sewing and Landscaping courses. The university offers excellent material, and the instructors are very knowledgeable!"</p>
+            <h4>John Smith</h4>
+        </div>
+    </div>
+
+    <!-- Testimonial 3 -->
+    <div class="testimonial-box">
+        <div class="testimonial-image">
+            <img src="https://via.placeholder.com/100" alt="Client 3" class="client-image">
+        </div>
+        <div class="testimonial-content">
+            <p>"Empowering The Nation University gave me the skills I needed to start my own small business. The Life Skills course was truly life-changing!"</p>
+            <h4>Mary Johnson</h4>
+        </div>
+    </div>
+
+    <!-- Testimonial 4 -->
+    <div class="testimonial-box">
+        <div class="testimonial-image">
+            <img src="https://via.placeholder.com/100" alt="Client 4" class="client-image">
+        </div>
+        <div class="testimonial-content">
+            <p>"The First Aid course was amazing, it gave me confidence and certification for a great job. Thank you Empowering The Nation University!"</p>
+            <h4>David Lee</h4>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Testimonials Section Styles */
+    .testimonials-slider {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        overflow: hidden;
+        margin-bottom: 40px;
+        gap: 20px; /* Add space between testimonial boxes */
+    }
+    .testimonial-box {
+        border: 2px solid grey;
+        padding: 20px;
+        border-radius: 5px;
+        width: 300px; /* Fixed width for uniformity */
+        text-align: center;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .testimonial-image img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+    .testimonial-content p {
+        font-style: italic;
+        color: #555;
+        flex-grow: 1; /* Allows the text to expand to fill available space */
+    }
+    .testimonial-content h4 {
+        margin-top: 10px;
+        font-weight: bold;
+        color: #28a99e;
+    }
+</style>
+
+
+
+<!-- Our Courses Section -->
+<h2>Our Courses</h2>
+<div class="courses-container">
+    <div class="course-box">
+        <i class="fas fa-child"></i>
+        <h3>Child Minding</h3>
+        <p>6-week short course to train and certify childminders.</p>
+    </div>
+    <div class="course-box">
+        <i class="fas fa-utensils"></i>
+        <h3>Cooking</h3>
+        <p>6-week course teaching culinary skills and techniques.</p>
+    </div>
+    <div class="course-box">
+        <i class="fas fa-seedling"></i>
+        <h3>Garden Maintenance</h3>
+        <p>6-week course on maintaining beautiful gardens.</p>
+    </div>
+    <div class="course-box">
+        <i class="fas fa-first-aid"></i>
+        <h3>First Aid</h3>
+        <p>6-month intensive First Aid course to equip you with life-saving skills.</p>
+    </div>
+</div>
+
+<!-- CSS for Our Courses Section -->
+<style>
+    .courses-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px;
+        max-width: 800px;
+        margin: auto;
+    }
+
+    .course-box {
+        background-color: #f8f8f8;
+        border: 2px solid #28a99e;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .course-box i {
+        font-size: 40px;
+        color: #28a99e;
+        margin-bottom: 10px;
+    }
+
+    .course-box:hover {
+        transform: scale(1.05);
+    }
+
+    .course-box h3 {
+        font-size: 22px;
+        margin: 10px 0;
+    }
+
+    .course-box p {
+        color: #555;
+    }
+</style>
+
+<!-- Our Core Values Section -->
+<section class="core-values-section">
+    <h2 style="text-align: center; color: #fff;">Our Core Values</h2>
+    <div class="core-values-container">
+        <!-- Core Value 1 -->
+        <div class="core-value-box">
+            <i class="fas fa-heart"></i>
+            <h4>Empathy</h4>
+            <p>We prioritize understanding and addressing the needs of our students, ensuring they feel valued and supported.</p>
+        </div>
+        
+        <!-- Core Value 2 -->
+        <div class="core-value-box">
+            <i class="fas fa-lightbulb"></i>
+            <h4>Innovation</h4>
+            <p>We encourage creativity and provide cutting-edge courses that reflect the latest industry trends.</p>
+        </div>
+        
+        <!-- Core Value 3 -->
+        <div class="core-value-box">
+            <i class="fas fa-users"></i>
+            <h4>Community</h4>
+            <p>We foster a strong sense of belonging, connecting students with each other and the wider community.</p>
+        </div>
+
+        <!-- Core Value 4 -->
+        <div class="core-value-box">
+            <i class="fas fa-check-circle"></i>
+            <h4>Integrity</h4>
+            <p>We operate with honesty, transparency, and the highest ethical standards in everything we do.</p>
+        </div>
+
+        <!-- Core Value 5 -->
+        <div class="core-value-box">
+            <i class="fas fa-globe"></i>
+            <h4>Global Impact</h4>
+            <p>Our programs aim to positively impact the world by equipping learners with valuable skills.</p>
+        </div>
+
+        <!-- Core Value 6 -->
+        <div class="core-value-box">
+            <i class="fas fa-handshake"></i>
+            <h4>Collaboration</h4>
+            <p>We believe in the power of partnerships and teamwork to drive success and innovation.</p>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Our Core Values Section Styles */
+    .core-values-section {
+        background: linear-gradient(135deg, #81cdc6, #28a99e);
+        padding: 40px 20px;
+        text-align: center;
+        margin-top: 50px;
+    }
+    .core-values-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .core-value-box {
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 20px;
+        width: 280px; /* Consistent width for all boxes */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .core-value-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    .core-value-box i {
+        font-size: 40px;
+        color: #28a99e;
+        margin-bottom: 15px;
+    }
+    .core-value-box h4 {
+        color: #28a99e;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+    .core-value-box p {
+        color: #555;
+        font-size: 1rem;
+    }
+</style>
+
+
+    </div>
+    
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2024 Empowering The Nation University. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

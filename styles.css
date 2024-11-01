@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Garet-Book';
+    src: url('fonts/Garet-Book.woff') format('woff2'), /* Adjust the format as necessary */
+         url('fonts/Garet-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
