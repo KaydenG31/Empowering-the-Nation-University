@@ -147,63 +147,161 @@
 
         body {
             font-family: Garet-Book, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
         }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-        }
-        h1 {
             text-align: center;
-            color: #333;
         }
-        .filter-section {
+
+        h1 {
+            color: #28a99e;
             margin-bottom: 20px;
-            display: flex;
-            gap: 10px;
-            justify-content: center;
         }
+
+        /* Filter Section */
+        .filter-section {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .filter-section label {
+            font-weight: bold;
+            color: #28a99e;
+        }
+
+        .filter-section select {
+            padding: 10px;
+            border: 1px solid #28a99e;
+            border-radius: 5px;
+            background-color: #81cdc6;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Course List Styling */
         .course-list {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 20px;
         }
+
+        /* Course Card Styling */
         .course-card {
-            width: 300px;
-            border: 1px solid #ddd;
+            width: 280px;
+            border: 1px solid #28a99e;
             border-radius: 8px;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
         }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
         .course-title {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
-            color: #333;
+            color: #28a99e;
+            margin-bottom: 5px;
         }
+
         .vendor-name {
-            color: #777;
+            color: #555;
             font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        /* Buttons */
+        .course-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .course-buttons button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            color: #fff;
+        }
+
+        .course-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
             margin-bottom: 10px;
         }
-        .course-buttons {
-            margin-top: 15px;
-            display: flex;
-            justify-content: space-around;
-        }
-        .course-buttons button {
-            padding: 8px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            color: white;
-        }
+
+
         .info-button {
-            background-color: #007bff;
+            background-color: #28a99e;
         }
+
+        .info-button:hover {
+            background-color: #1f8776;
+        }
+
         .cart-button {
-            background-color: #28a745;
+            background-color: #81cdc6;
         }
+
+        .cart-button:hover {
+            background-color: #5bb3a9;
+        }
+
+        /* Cart Icon Container */
+#cart-icon {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 24px; /* Adjust size as needed */
+    color: #28a99e; /* Primary color for cart icon */
+}
+
+/* Cart Icon Styling */
+.cart-icon {
+    font-size: 28px;
+}
+
+/* Cart Count Bubble */
+.cart-count-bubble {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #81cdc6; /* Secondary color for the bubble */
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 4px 8px;
+    min-width: 18px; /* Ensures bubble stays round even with single digits */
+    text-align: center;
+    line-height: 1;
+}
+
+/* Hover effect */
+#cart-icon:hover .cart-icon {
+    color: #1e7f75; /* Darker shade on hover for cart icon */
+}
+
 
         footer {
             background-color: #81cdc6;
@@ -250,10 +348,12 @@
     </div>
     
     <header>
+        
         <img src="Assets/ETNU.png" alt="Empowering the Nation University Logo">
         
         <nav>
             <ul>
+                <li><a href="Homepage.html">HOME</a></li>
                 <li><a href="About_Us.html">ABOUT US</a></li>
                 <li><a href="Contact_Us.html">CONTACT US</a></li>
                 <li><a href="Our_Courses.html">OUR COURSES</a></li>
@@ -269,15 +369,17 @@
             
             <!-- Add to Cart Icon -->
             <div class="cart-icon">
-                <i class="fas fa-shopping-cart"></i>
-                <div class="cart-count">0</div>
+                <a href="cart.html">
+                    <i class="fas fa-shopping-cart"></i> <!-- Using Font Awesome icon -->
+                </a>
             </div>
-        </div>
     </header> 
+    
 
     <div class="container">
         <h1>Our Courses</h1>
     
+        <!-- Filter Section -->
         <div class="filter-section">
             <label for="courseFilter">Filter Courses:</label>
             <select id="courseFilter" onchange="filterCourses()">
@@ -290,69 +392,77 @@
                 <option value="life-skills">Life Skills</option>
                 <option value="sewing">Sewing</option>
             </select>
-        </div>
+        </div> 
     
+        <!-- Course List -->
         <div class="course-list">
             <!-- Course Cards -->
             <div class="course-card child-minding">
+                <img src="Images/ChildMinding.jpg" alt="Child Minding" class="course-image">
                 <div class="course-title">Child Minding</div>
                 <div class="vendor-name">Empowering The Nation University</div>
                 <div class="course-buttons">
-                    <button class="info-button">More Info</button>
-                    <button class="cart-button">Add to Cart</button>
+                    <button class="info-button" data-course-url="Courses/Child_Minding_course.html">More Info</button>
+                    <button class="add-to-cart" data-course-id="childMinding" data-course-title="Child Minding">Add to Cart</button>
                 </div>
             </div>
             <div class="course-card cooking">
+                <img src="Images/Cooking.jpg" alt="Cooking" class="course-image">
                 <div class="course-title">Cooking</div>
                 <div class="vendor-name">Empowering The Nation University</div>
                 <div class="course-buttons">
-                    <button class="info-button">More Info</button>
-                    <button class="cart-button">Add to Cart</button>
+                    <button class="info-button" data-course-url="Courses/Cooking_course.html">More Info</button>
+                    <button class="add-to-cart" data-course-id="cooking" data-course-title="Cooking">Add to Cart</button>
                 </div>
             </div>
             <div class="course-card first-aid">
+                <img src="Images/FirstAid.jpg" alt="First Aid" class="course-image">
                 <div class="course-title">First Aid</div>
                 <div class="vendor-name">Empowering The Nation University</div>
                 <div class="course-buttons">
-                    <button class="info-button">More Info</button>
-                    <button class="cart-button">Add to Cart</button>
+                    <button class="info-button" data-course-url="Courses/First_Aid_course.html">More Info</button>
+                    <button class="add-to-cart" data-course-id="firstAid" data-course-title="First Aid">Add to Cart</button>
                 </div>
             </div>
             <div class="course-card garden-maintenance">
+                <img src="Images/Garden.jpg" alt="Garden Maintenance" class="course-image">
                 <div class="course-title">Garden Maintenance</div>
                 <div class="vendor-name">Empowering The Nation University</div>
                 <div class="course-buttons">
-                    <button class="info-button">More Info</button>
-                    <button class="cart-button">Add to Cart</button>
+                    <button class="info-button" data-course-url="Courses/Garden_Maintenance_course.html">More Info</button>
+                    <button class="add-to-cart" data-course-id="gardenMaintenance" data-course-title="Garden Maintenance">Add to Cart</button>
                 </div>
             </div>
             <div class="course-card landscaping">
+                <img src="Images/Landscaping.jpg" alt="Landscaping" class="course-image">
                 <div class="course-title">Landscaping</div>
                 <div class="vendor-name">Empowering The Nation University</div>
                 <div class="course-buttons">
-                    <button class="info-button">More Info</button>
-                    <button class="cart-button">Add to Cart</button>
+                    <button class="info-button" data-course-url="Courses/Landscaping_course.html">More Info</button>
+                    <button class="add-to-cart" data-course-id="course5" data-course-title="Landscaping">Add to Cart</button>
                 </div>
             </div>
             <div class="course-card life-skills">
+                <img src="Images/LifeSkills.jpg" alt="Life Skills" class="course-image">
                 <div class="course-title">Life Skills</div>
                 <div class="vendor-name">Empowering The Nation University</div>
                 <div class="course-buttons">
-                    <button class="info-button">More Info</button>
-                    <button class="cart-button">Add to Cart</button>
+                    <button class="info-button" data-course-url="Courses/Life_Skills_course.html">More Info</button>
+                    <button class="add-to-cart" data-course-id="course6" data-course-title="Life Skills">Add to Cart</button>
                 </div>
             </div>
             <div class="course-card sewing">
+                <img src="Images/Sewing.jpg" alt="Sewing" class="course-image">
                 <div class="course-title">Sewing</div>
                 <div class="vendor-name">Empowering The Nation University</div>
                 <div class="course-buttons">
-                    <button class="info-button">More Info</button>
-                    <button class="cart-button">Add to Cart</button>
+                    <button class="info-button" data-course-url="Courses/Sewing_course.html">More Info</button>
+                    <button class="add-to-cart" data-course-id="course7" data-course-title="Sewing">Add to Cart</button>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <script>
         function filterCourses() {
             const filter = document.getElementById('courseFilter').value;
@@ -366,7 +476,83 @@
                 }
             });
         }
-    </script>
+    </script> 
+
+<script>
+// Select all "More Info" buttons
+document.querySelectorAll('.info-button').forEach(button => {
+    button.addEventListener('click', (event) => {
+        // Get the URL from the data attribute
+        const courseUrl = event.target.getAttribute('data-course-url');
+        
+        // Redirect to the specific course page
+        if (courseUrl) {
+            window.location.href = courseUrl;
+        } else {
+            console.error("Course URL not found!");
+        }
+    });
+});
+</script> 
+
+
+<script>
+// Check if .add-to-cart buttons exist
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    console.log("Add-to-cart button found:", button); // Debugging log
+    button.addEventListener('click', (event) => {
+        const courseId = event.target.dataset.courseId;
+        const courseTitle = event.target.dataset.courseTitle;
+        console.log(`Attempting to add course: ${courseTitle} (ID: ${courseId})`); // Debugging log
+        addToCart(courseId, courseTitle);
+    });
+});
+
+function addToCart(courseId, courseTitle) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    if (!cart.some(course => course.id === courseId)) {
+        cart.push({ id: courseId, title: courseTitle });
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+        showPopup("Course added to cart!");
+        console.log(`Course added: ${courseTitle}`); // Debugging log
+    } else {
+        showPopup("Course is already in your cart!", "error");
+        console.log(`Course already in cart: ${courseTitle}`); // Debugging log
+    }
+}
+
+function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartCountElement = document.getElementById('cart-count');
+    if (cartCountElement) {
+        cartCountElement.textContent = cart.length;
+    } else {
+        console.warn("Cart count element not found"); // Debugging log
+    }
+}
+
+function showPopup(message, type = "success") {
+    const popup = document.createElement('div');
+    popup.className = `popup ${type}`;
+    popup.innerText = message;
+    document.body.appendChild(popup);
+
+    setTimeout(() => {
+        popup.remove();
+    }, 2000);
+}
+
+window.onload = updateCartCount;
+</script>
+
+<script src="add-to-cart.js"></script>
+
+
+
+
+    
 
     <footer>
         <div class="social-icons">

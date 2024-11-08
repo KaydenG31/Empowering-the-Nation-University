@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empowering The Nation University</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @font-face {
+    font-family: 'Garet-Book';
+    src: url('fonts/Garet-Book.woff') format('woff2'), /* Adjust the format as necessary */
+         url('fonts/Garet-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+        body, html {
+            font-family: Garet-Book, sans-serif;
+            font-stretch: expanded;
+           font-weight: bold;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .announcement-bar {
+            background-color: #28a99e;
+            color: #000000;
+            text-align: center;
+            padding: 20px 0;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+            z-index: 1000; /* Ensure it appears on top */
+        }
+        .announcement-text {
+            display: inline-block;
+            padding-left: 100%;
+            animation: slide-left 30s linear infinite;
+        }
+        @keyframes slide-left {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+        header {
+            background-color: #ffffff;
+            border-bottom: 2px solid #28a99e;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Ensure space between logo and nav items */
+            padding: 10px 20px;
+            position: relative;
+            z-index: 900; /* Keep it above other content but below announcement bar */
+        }
+        header img {
+            height: 100px; /* Adjust the height according to your logo */
+            max-width: 100%; /* Ensure the logo scales well */
+            margin-right: 20px;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end; /* Align navigation to the right */
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: bold;
+            padding: 10px 0;
+            display: block;
+        }
+        /* Search and Cart Container */
+        .search-cart-container {
+            display: flex;
+            align-items: center;
+        }
+        /* Search Bar Styles */
+        .search-container {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        .search-container input {
+            padding: 5px 10px;
+            font-size: 16px;
+            border: 2px solid #28a99e;
+            border-radius: 5px;
+            outline: none;
+        }
+        .search-container button {
+            padding: 5px 10px;
+            background-color: #28a99e;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 5px;
+        }
+        .search-container button i {
+            color: #ffffff;
+            font-size: 16px;
+        }
+        
+body {
+    font-family: Garet-Book, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header, .cart-icon a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #28a99e;
+}
+
+.cart-icon a {
+    position: relative;
+}
+
+#cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #81cdc6;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 50%;
+}
+
+main {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#checkout-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #28a99e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.popup {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #81cdc6;
+    color: #fff;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.add-to-cart {
+    background-color: #28a99e; /* Primary theme color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #81cdc6; /* Secondary theme color for hover */
+}
+
+/* Course Title and Vendor */
+.course-info {
+    font-size: 18px;
+    color: #333;
+}
+
+.vendor-name {
+    font-size: 14px;
+    color: #81cdc6;
+}
+
+/* Remove Button */
+.remove-btn {
+    background-color: #ff4d4d;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Cart Summary Section */
+.cart-summary {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #81cdc6;
+    color: white;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+.checkout-btn {
+    background-color: #28a99e;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Popup Message Styling */
+.popup-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px;
+    background-color: #28a99e;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+}
+
+/* Styling for the Proceed to Checkout button */
+.payment-button {
+    background-color: #28a99e; /* Your primary color */
+    color: white;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+.payment-button:hover {
+    background-color: #218b87; /* Darker shade for hover effect */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.payment-button:focus {
+    outline: none;
+}
+
+.payment-button:active {
+    background-color: #1e7a74; /* Even darker shade for active state */
+    transform: scale(1); /* Remove zoom effect when clicked */
+}
+
+
+        footer {
+            background-color: #81cdc6;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            position: relative;
+        }
+        p {
+            padding: 0 20px;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+        }
+        .social-icons {
+            margin: 10px 0;
+        }
+        .social-icons a {
+            color: #000000;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 24px;
+        }
+        .social-icons a:hover {
+            color: #28a99e;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            width: 100%; /* Make images full width */
+            height: auto; /* Maintain aspect ratio */
+            margin: 10px 0;
+            border: none; /* Remove the border around images */
+            border-radius: 0; /* Remove rounded corners */
+        }
+    </style>
+</head>
+<body>
+    <div class="announcement-bar">
+        <div class="announcement-text">Courses on sale from R199.99 | Plus an extra 15% with Promo Code "EMPOWERMENT"</div>
+    </div>
+    
+    <header>
+        
+        <img src="Assets/ETNU.png" alt="Empowering the Nation University Logo">
+        
+        <nav>
+            <ul>
+                <li><a href="Homepage.html">HOME</a></li>
+                <li><a href="About_Us.html">ABOUT US</a></li>
+                <li><a href="Contact_Us.html">CONTACT US</a></li>
+                <li><a href="Our_Courses.html">OUR COURSES</a></li>
+            </ul>
+        </nav>
+
+        <div class="search-cart-container">
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" placeholder="Search Our Courses...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            
+            
+    </header> 
+
+   
+
+    <main>
+        <h1>Your Cart</h1>
+        <div id="cart-items">
+            <!-- Cart items will be dynamically added here by JavaScript -->
+        </div>
+        <div id="cart-total">
+            <a href="Checkout_Page.html">
+                <button class="payment-button">Proceed to Checkout</button>
+            </a>
+            
+        </div>
+    </main>
+
+    <script src="cart.js"></script>
+    
+    
+    <h1>Your Cart</h1>
+    <div id="cart-items" class="cart-container">
+        <!-- Cart items will be dynamically generated here -->
+    </div>
+
+    <!-- Script to handle cart functionality -->
+    <script>
+        // Function to render cart items on the Cart page
+        function renderCart() {
+            const cartContainer = document.getElementById('cart-items');
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cartContainer.innerHTML = ''; // Clear existing items
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+                return;
+            }
+
+            cart.forEach((course) => {
+                // Check if course data is valid
+                if (course && course.id && course.title) {
+                    const courseElement = document.createElement('div');
+                    courseElement.className = 'cart-item';
+                    courseElement.innerHTML = `
+                        <p><strong>${course.title}</strong></p>
+                        <button class="remove-from-cart" data-course-id="${course.id}">Remove</button>
+                    `;
+                    cartContainer.appendChild(courseElement);
+                } else {
+                    console.error("Invalid course data:", course);
+                }
+            });
+
+            // Add event listeners for "Remove" buttons
+            document.querySelectorAll('.remove-from-cart').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const courseId = event.target.dataset.courseId;
+                    removeFromCart(courseId);
+                });
+            });
+        }
+
+        // Function to add items to the cart
+        function addToCart(courseId, courseTitle) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Check if the course is already in the cart
+            if (!cart.some(course => course.id === courseId)) {
+                cart.push({ id: courseId, title: courseTitle });
+                localStorage.setItem('cart', JSON.stringify(cart)); // Save to localStorage
+                updateCartCount();
+                showPopup("Course added to cart!");
+                renderCart(); // Update cart display if on cart page
+            } else {
+                showPopup("Course is already in your cart!", "error");
+            }
+        }
+
+        // Function to remove items from the cart
+        function removeFromCart(courseId) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart = cart.filter(course => course.id !== courseId); // Remove the selected course
+            localStorage.setItem('cart', JSON.stringify(cart)); // Update localStorage
+            updateCartCount();
+            renderCart(); // Re-render cart to show changes
+            showPopup("Course removed from cart!");
+        }
+
+        // Popup message function
+        function showPopup(message, type = "success") {
+            const popup = document.createElement('div');
+            popup.className = `popup ${type}`;
+            popup.innerText = message;
+            document.body.appendChild(popup);
+
+            setTimeout(() => {
+                popup.remove();
+            }, 2000);
+        }
+
+        // Cart count update function
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartCountElement = document.getElementById('cart-count');
+            if (cartCountElement) {
+                cartCountElement.textContent = cart.length;
+            }
+        }
+
+        // Initialize cart on page load
+        window.onload = function() {
+            updateCartCount();
+            if (document.getElementById('cart-items')) {
+                renderCart();
+            }
+        };
+    </script>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2024 Empowering The Nation University. All rights reserved.</p>
+    </footer>
+</body>
+</html>

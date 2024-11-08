@@ -133,6 +133,42 @@
             text-align: center;
             line-height: 1;
         }
+
+        /* Cart Icon Container */
+#cart-icon {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 24px; /* Adjust size as needed */
+    color: #28a99e; /* Primary color for cart icon */
+}
+
+/* Cart Icon Styling */
+.cart-icon {
+    font-size: 28px;
+}
+
+/* Cart Count Bubble */
+.cart-count-bubble {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #81cdc6; /* Secondary color for the bubble */
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 4px 8px;
+    min-width: 18px; /* Ensures bubble stays round even with single digits */
+    text-align: center;
+    line-height: 1;
+}
+
+/* Hover effect */
+#cart-icon:hover .cart-icon {
+    color: #1e7f75; /* Darker shade on hover for cart icon */
+}
+
         h1 {
             text-align: center;
             margin: 20px 0;
@@ -169,8 +205,11 @@
         }
 
         .logo img {
-            width: 150px;
-        }
+            max-width: 200px; /* Adjust as needed */
+            height: auto; /* Keep aspect ratio */
+            cursor: pointer; /* Changes cursor to pointer on hover */
+         }
+
 
         /* Main Container */
         .container {
@@ -317,10 +356,12 @@
     </div>
     
     <header>
+        
         <img src="Assets/ETNU.png" alt="Empowering the Nation University Logo">
         
         <nav>
             <ul>
+                <li><a href="Homepage.html">HOME</a></li>
                 <li><a href="About_Us.html">ABOUT US</a></li>
                 <li><a href="Contact_Us.html">CONTACT US</a></li>
                 <li><a href="Our_Courses.html">OUR COURSES</a></li>
@@ -336,11 +377,13 @@
             
             <!-- Add to Cart Icon -->
             <div class="cart-icon">
-                <i class="fas fa-shopping-cart"></i>
-                <div class="cart-count">0</div>
+                <a href="cart.html">
+                    <i class="fas fa-shopping-cart"></i> <!-- Using Font Awesome icon -->
+                </a>
             </div>
-        </div>
     </header> 
+
+  
 
        <!-- Logo Section -->
        <div class="logo">

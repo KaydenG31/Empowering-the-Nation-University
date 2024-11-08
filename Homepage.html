@@ -8,8 +8,8 @@
     <style>
         @font-face {
     font-family: 'Garet-Book';
-    src: url('fonts/Garet-Book.woff') format('woff2'), /* Adjust the format as necessary */
-         url('fonts/Garet-Book.woff') format('woff');
+    src: url('../Fonts/Garet-Book.woff') format('woff2'), /* Adjust the format as necessary */
+         url('../Fonts/Garet-Book.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -133,6 +133,42 @@
             text-align: center;
             line-height: 1;
         }
+
+        /* Cart Icon Container */
+#cart-icon {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 24px; /* Adjust size as needed */
+    color: #28a99e; /* Primary color for cart icon */
+}
+
+/* Cart Icon Styling */
+.cart-icon {
+    font-size: 28px;
+}
+
+/* Cart Count Bubble */
+.cart-count-bubble {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #81cdc6; /* Secondary color for the bubble */
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 4px 8px;
+    min-width: 18px; /* Ensures bubble stays round even with single digits */
+    text-align: center;
+    line-height: 1;
+}
+
+/* Hover effect */
+#cart-icon:hover .cart-icon {
+    color: #1e7f75; /* Darker shade on hover for cart icon */
+}
+
         h1 {
             text-align: center;
             margin: 20px 0;
@@ -154,7 +190,7 @@
         p {
             padding: 0 20px;
             text-align: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Garet-Book, sans-serif;
             font-style: normal;
             font-weight: 400;
         }
@@ -189,13 +225,15 @@
     </div>
     
     <header>
-        <img src="Assets/ETNU.png" alt="Empowering the Nation University Logo">
+        
+        <img src="../Assets/ETNU.png" alt="Empowering the Nation University Logo">
         
         <nav>
             <ul>
-                <li><a href="About_Us.html">ABOUT US</a></li>
-                <li><a href="Contact_Us.html">CONTACT US</a></li>
-                <li><a href="Our_Courses.html">OUR COURSES</a></li>
+                <li><a href="../Homepage.html">HOME</a></li>
+                <li><a href="../About_Us.html">ABOUT US</a></li>
+                <li><a href="../Contact_Us.html">CONTACT US</a></li>
+                <li><a href="../Our_Courses.html">OUR COURSES</a></li>
             </ul>
         </nav>
 
@@ -208,11 +246,15 @@
             
             <!-- Add to Cart Icon -->
             <div class="cart-icon">
-                <i class="fas fa-shopping-cart"></i>
-                <div class="cart-count">0</div>
+                <a href="../cart.html">
+                    <span id="cart-count">0</span>
+                    <i class="fas fa-shopping-cart"></i> <!-- Using Font Awesome icon -->
+                </a>
             </div>
-        </div>
     </header>
+
+   
+    
 
     <div class="content">
         <!-- Image Section -->
@@ -229,7 +271,7 @@
     <!-- Testimonial 1 -->
     <div class="testimonial-box">
         <div class="testimonial-image">
-            <img src="https://via.placeholder.com/100" alt="Client 1" class="client-image">
+            
         </div>
         <div class="testimonial-content">
             <p>"The courses at Empowering The Nation University have transformed my life! The Child Minding course helped me secure a better-paying job. Highly recommend!"</p>
@@ -240,7 +282,8 @@
     <!-- Testimonial 2 -->
     <div class="testimonial-box">
         <div class="testimonial-image">
-            <img src="https://via.placeholder.com/100" alt="Client 2" class="client-image">
+           
+            
         </div>
         <div class="testimonial-content">
             <p>"I loved the Sewing and Landscaping courses. The university offers excellent material, and the instructors are very knowledgeable!"</p>
@@ -251,7 +294,7 @@
     <!-- Testimonial 3 -->
     <div class="testimonial-box">
         <div class="testimonial-image">
-            <img src="https://via.placeholder.com/100" alt="Client 3" class="client-image">
+        
         </div>
         <div class="testimonial-content">
             <p>"Empowering The Nation University gave me the skills I needed to start my own small business. The Life Skills course was truly life-changing!"</p>
@@ -262,7 +305,7 @@
     <!-- Testimonial 4 -->
     <div class="testimonial-box">
         <div class="testimonial-image">
-            <img src="https://via.placeholder.com/100" alt="Client 4" class="client-image">
+       
         </div>
         <div class="testimonial-content">
             <p>"The First Aid course was amazing, it gave me confidence and certification for a great job. Thank you Empowering The Nation University!"</p>

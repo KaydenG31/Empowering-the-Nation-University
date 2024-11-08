@@ -8,8 +8,8 @@
     <style>
         @font-face {
     font-family: 'Garet-Book';
-    src: url('fonts/Garet-Book.woff') format('woff2'), /* Adjust the format as necessary */
-         url('fonts/Garet-Book.woff') format('woff');
+    src: url('../Fonts/Garet-Book.woff') format('woff2'), /* Adjust the format as necessary */
+         url('../Fonts/Garet-Book.wofff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -144,6 +144,54 @@
         .content {
             flex: 1;
         }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #28a99e;
+            text-align: center;
+        }
+        .fees, .purpose, .content {
+            margin: 1rem 0;
+        }
+        .content ul {
+            padding-left: 20px;
+        }
+        .add-to-cart-btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #81cdc6;
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+        .add-to-cart-btn:hover {
+            background-color: #28a99e;
+        }
+        .course-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
         footer {
             background-color: #81cdc6;
             text-align: center;
@@ -154,7 +202,7 @@
         p {
             padding: 0 20px;
             text-align: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Garet-Book, sans-serif;
             font-style: normal;
             font-weight: 400;
         }
@@ -189,13 +237,14 @@
     </div>
     
     <header>
-        <img src="Assets/ETNU.png" alt="Empowering the Nation University Logo">
+        <img src="../Assets/ETNU.png" alt="Empowering the Nation University Logo">
         
         <nav>
             <ul>
-                <li><a href="About_Us.html">ABOUT US</a></li>
-                <li><a href="Contact_Us.html">CONTACT US</a></li>
-                <li><a href="Our_Courses.html">OUR COURSES</a></li>
+                <li><a href="../Homepage.html">HOME</a></li>
+                <li><a href="../About_Us.html">ABOUT US</a></li>
+                <li><a href="../Contact_Us.html">CONTACT US</a></li>
+                <li><a href="../Our_Courses.html">OUR COURSES</a></li>
             </ul>
         </nav>
 
@@ -208,11 +257,42 @@
             
             <!-- Add to Cart Icon -->
             <div class="cart-icon">
-                <i class="fas fa-shopping-cart"></i>
-                <div class="cart-count">0</div>
+                <a href="../cart.html">
+                    <i class="fas fa-shopping-cart"></i> <!-- Using Font Awesome icon -->
+                </a>
             </div>
         </div>
     </header> 
+
+    <div class="course-container">
+        <h1>Life Skills</h1>
+        <img src="path/to/life-skills.jpg" alt="Life Skills Course">
+        <p><strong>Fees:</strong> R1500</p>
+        <p><strong>Purpose:</strong> To provide essential skills for navigating life’s basic necessities.</p>
+        <h3>Course Content</h3>
+        <ul>
+            <li>Opening and managing a bank account</li>
+            <li>Understanding basic labor laws</li>
+            <li>Basic reading and writing literacy</li>
+            <li>Essential numeric literacy</li>
+        </ul>
+    </div>
+    
+</div>
+
+    <script>
+        function addToCart(courseId) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (!cart.includes(courseId)) {
+                cart.push(courseId);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert("Course added to cart!");
+            } else {
+                alert("This course is already in your cart.");
+            }
+        }
+    </script>
+
     <footer>
         <div class="social-icons">
             <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>

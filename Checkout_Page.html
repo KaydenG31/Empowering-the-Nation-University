@@ -3,224 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empowering The Nation University</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        @font-face {
-    font-family: 'Garet-Book';
-    src: url('fonts/Garet-Book.woff') format('woff2'), /* Adjust the format as necessary */
-         url('fonts/Garet-Book.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+        /* General page styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f6f3;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
 
-        body, html {
-            font-family: Garet-Book, sans-serif;
-            font-stretch: expanded;
-           font-weight: bold;
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        .announcement-bar {
-            background-color: #28a99e;
-            color: #000000;
+        .logo {
             text-align: center;
-            padding: 20px 0;
-            font-weight: bold;
-            position: relative;
-            overflow: hidden;
-            white-space: nowrap;
-            z-index: 1000; /* Ensure it appears on top */
+            margin-top: 20px;
         }
-        .announcement-text {
-            display: inline-block;
-            padding-left: 100%;
-            animation: slide-left 30s linear infinite;
+
+        .logo img {
+            max-width: 150px; /* Adjust size as needed */
         }
-        @keyframes slide-left {
-            from {
-                transform: translateX(100%);
-            }
-            to {
-                transform: translateX(-100%);
-            }
+
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
-        header {
-            background-color: #ffffff;
-            border-bottom: 2px solid #28a99e;
-            display: flex;
-            align-items: center;
-            justify-content: space-between; /* Ensure space between logo and nav items */
-            padding: 10px 20px;
-            position: relative;
-            z-index: 900; /* Keep it above other content but below announcement bar */
-        }
-        header img {
-            height: 100px; /* Adjust the height according to your logo */
-            max-width: 100%; /* Ensure the logo scales well */
-            margin-right: 20px;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: flex-end; /* Align navigation to the right */
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: #000000;
-            font-weight: bold;
-            padding: 10px 0;
-            display: block;
-        }
-        /* Search and Cart Container */
-        .search-cart-container {
-            display: flex;
-            align-items: center;
-        }
-        /* Search Bar Styles */
-        .search-container {
-            display: flex;
-            align-items: center;
-            margin-right: 20px;
-        }
-        .search-container input {
-            padding: 5px 10px;
-            font-size: 16px;
-            border: 2px solid #28a99e;
-            border-radius: 5px;
-            outline: none;
-        }
-        .search-container button {
-            padding: 5px 10px;
-            background-color: #28a99e;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-left: 5px;
-        }
-        .search-container button i {
-            color: #ffffff;
-            font-size: 16px;
-        }
-        /* Cart Icon Styles */
-        .cart-icon {
-            position: relative;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-        }
-        .cart-icon i {
-            font-size: 28px; /* Larger cart icon */
-            color: #000000;
-        }
-        .cart-count {
-            position: absolute;
-            top: -8px; /* Position above the cart icon */
-            right: -8px; /* Align it to the right */
-            background-color: #28a99e;
-            color: #ffffff;
-            font-size: 12px;
-            border-radius: 50%;
-            padding: 2px 6px;
-            text-align: center;
-            line-height: 1;
-        }
-        h1 {
-            text-align: center;
-            margin: 20px 0;
-        }
-        h2 {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .content {
-            flex: 1;
-        }
-        footer {
-            background-color: #81cdc6;
-            text-align: center;
-            padding: 10px;
-            width: 100%;
-            position: relative;
-        }
-        p {
-            padding: 0 20px;
-            text-align: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-style: normal;
-            font-weight: 400;
-        }
-        .social-icons {
-            margin: 10px 0;
-        }
-        .social-icons a {
-            color: #000000;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 24px;
-        }
-        .social-icons a:hover {
+
+        h1, h2 {
             color: #28a99e;
-        }
-        .image-container {
             text-align: center;
-            margin: 20px 0;
         }
-        .image-container img {
-            width: 100%; /* Make images full width */
-            height: auto; /* Maintain aspect ratio */
-            margin: 10px 0;
-            border: none; /* Remove the border around images */
-            border-radius: 0; /* Remove rounded corners */
+
+        .checkout-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .cart-summary, .billing-info, .payment-info {
+            margin-top: 30px;
+        }
+
+        /* Form styling */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        /* Cart summary section styling */
+        .cart-summary {
+            background-color: #81cdc6;
+            padding: 20px;
+            border-radius: 8px;
+            color: #fff;
+        }
+
+        .cart-summary h2 {
+            color: #fff;
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .total {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        /* Payment button styling */
+        .payment-button {
+            background-color: #28a99e;
+            color: white;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        .payment-button:hover {
+            background-color: #218b87;
+        }
+
+        /* Success popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #28a99e;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            z-index: 100;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .popup.show {
+            display: block;
         }
     </style>
 </head>
 <body>
-    <div class="announcement-bar">
-        <div class="announcement-text">Courses on sale from R199.99 | Plus an extra 15% with Promo Code "EMPOWERMENT"</div>
-    </div>
-    
-    <header>
-        <img src="Assets/ETNU.png" alt="Empowering the Nation University Logo">
-        
-        <nav>
-            <ul>
-                <li><a href="About_Us.html">ABOUT US</a></li>
-                <li><a href="Contact_Us.html">CONTACT US</a></li>
-                <li><a href="Our_Courses.html">OUR COURSES</a></li>
-            </ul>
-        </nav>
 
-        <div class="search-cart-container">
-            <!-- Search Bar -->
-            <div class="search-container">
-                <input type="text" placeholder="Search Our Courses...">
-                <button><i class="fas fa-search"></i></button>
+<!-- Logo centered at the top -->
+<div class="logo">
+    <img src="Assets/ETNU.png" alt="Empowering the Nation University Logo">
+</div>
+
+<div class="container">
+    <h1>Checkout</h1>
+
+    <!-- Cart Summary -->
+    <div class="cart-summary">
+        <h2>Order Summary</h2>
+        <div id="cart-items">
+            <!-- Dynamic list of items will be added here -->
+            <div class="item">
+                <span>First Aid Course</span>
+                <span>R1500</span>
             </div>
-            
-            <!-- Add to Cart Icon -->
-            <div class="cart-icon">
-                <i class="fas fa-shopping-cart"></i>
-                <div class="cart-count">0</div>
+            <div class="item">
+                <span>Cooking Course</span>
+                <span>R750</span>
             </div>
         </div>
-    </header> 
-    <footer>
-        <div class="social-icons">
-            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <p class="total">Subtotal: R <span id="subtotal">0</span></p>
+        <p class="total">VAT (15%): R <span id="vat">0</span></p>
+        <p class="total">Discount: R <span id="discount">0</span></p>
+        <p class="total">Total: R <span id="total-amount">0</span></p>
+    </div>
+
+    <button class="payment-button" onclick="calculateTotal()">Calculate Total</button>
+
+    <!-- Billing Information -->
+    <div class="billing-info">
+        <h2>Billing Information</h2>
+        <div class="form-group">
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" placeholder="Enter your full name">
         </div>
-        <p>&copy; 2024 Empowering The Nation University. All rights reserved.</p>
-    </footer>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" placeholder="Enter your address">
+        </div>
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" placeholder="Enter your city">
+        </div>
+        <div class="form-group">
+            <label for="zip-code">Zip Code</label>
+            <input type="text" id="zip-code" placeholder="Enter your zip code">
+        </div>
+    </div>
+
+    <!-- Payment Section -->
+    <div class="payment-info">
+        <h2>Payment</h2>
+        <div class="form-group">
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" placeholder="XXXX-XXXX-XXXX-XXXX">
+        </div>
+        <div class="form-group">
+            <label for="expiry-date">Expiry Date</label>
+            <input type="text" id="expiry-date" placeholder="MM/YY">
+        </div>
+        <div class="form-group">
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" placeholder="XXX">
+        </div>
+        <button class="payment-button" onclick="completePurchase()">Complete Purchase</button>
+    </div>
+</div>
+
+<div id="popup" class="popup">Thank you for your purchase!</div>
+
+<script>
+    function calculateTotal() {
+        // Dummy cart data for example
+        let cart = [
+            { title: "First Aid Course", price: 1500 },
+            { title: "Cooking Course", price: 750 }
+        ];
+
+        // Calculate subtotal
+        let subtotal = cart.reduce((sum, item) => sum + item.price, 0);
+
+        // Apply discounts
+        let discount = 0;
+        if (cart.length === 2) discount = subtotal * 0.05;
+        else if (cart.length === 3) discount = subtotal * 0.10;
+        else if (cart.length > 3) discount = subtotal * 0.15;
+
+        // Calculate VAT (15%)
+        let vat = (subtotal - discount) * 0.15;
+        
+        // Calculate final total
+        let total = subtotal - discount + vat;
+
+        // Display amounts
+        document.getElementById('subtotal').innerText = subtotal.toFixed(2);
+        document.getElementById('vat').innerText = vat.toFixed(2);
+        document.getElementById('discount').innerText = discount.toFixed(2);
+        document.getElementById('total-amount').innerText = total.toFixed(2);
+    }
+
+    function completePurchase() {
+        // Display success message popup
+        const popup = document.getElementById("popup");
+        popup.classList.add("show");
+
+        setTimeout(() => {
+            popup.classList.remove("show");
+            window.location.href = "thank-you.html"; // Redirect to thank you page
+        }, 2000);
+    }
+</script>
+
 </body>
 </html>
